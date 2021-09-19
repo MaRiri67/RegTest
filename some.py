@@ -74,7 +74,7 @@ images = np.vstack([x])
 classes = model_file.predict(x)
 y_classes=classes.argmax(axis=-1)
 label = y_classes[0]#9
-st.write("Model မှခန့်မှန်း လိုက်သော ပုဂ္ဂိုလ် မှာ ",dictionary[label], "ဖြစ်ပါသည်။")
+st.write("      Model မှခန့်မှန်း လိုက်သော ပုဂ္ဂိုလ် မှာ ",dictionary[label], "ဖြစ်ပါသည်။")
 
 
 
