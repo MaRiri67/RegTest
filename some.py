@@ -35,9 +35,9 @@ with st.sidebar:
     img_file = st.selectbox("Choose any one image", template_dirs['dir'])
     st.sidebar.title("Note")
     st.sidebar.write(
-        """Playing with the options in Selectbox, you _will_ find **images** of Four Famous-Person exist in this
+        """Playing with the options in Selectbox, you will find _images of Four Famous-Person_ exist in this
         model.The second Selectbox includes twenty test images of those people. You can test each person's images by choosing the avaliable options
-        in those two selectboxes. After that, the Model predicted answer will apper. Keep in mind that this model's prediction Accuracy is 91.25% which isn't not bad.
+        in those two selectboxes. After that, the Model predicted answer will apper. Keep in mind that this model's prediction Accuracy is **_91.25%-** _which is not bad._
         
         """
     )
