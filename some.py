@@ -1,50 +1,9 @@
 import streamlit as st
-# To make things easier later, we're also importing numpy and pandas for
-# working with sample data.
 import numpy as np
 import pandas as pd
-# import seaborn as sns
-# import matplotlib
 import matplotlib.pyplot as plt
 import tensorflow as tf
-# from jinja2 import Environment, FileSystemLoader
-# import uuid
-# from github import Github
-# from dotenv import load_dotenv
 import os
-# import collections
-
-# import utils
-
-
-
-#*************************************#
-# Set up github access for "Open in Colab" button.
-# TODO: Maybe refactor this to another file.
-# load_dotenv()  # load environment variables from .env file
-# if os.getenv("GITHUB_TOKEN") and os.getenv("REPO_NAME"):
-#     g = Github(os.getenv("GITHUB_TOKEN"))
-#     repo = g.get_repo(os.getenv("REPO_NAME"))
-#     colab_enabled = True
-
-#     def add_to_colab(notebook):
-#         """Adds notebook to Colab by pushing it to Github repo and returning Colab link."""
-#         notebook_id = str(uuid.uuid4())
-#         repo.create_file(
-#             f"notebooks/{notebook_id}/generated-notebook.ipynb",
-#             f"Added notebook {notebook_id}",
-#             notebook,
-#         )
-#         colab_link = f"http://colab.research.google.com/github/{os.getenv('REPO_NAME')}/blob/main/notebooks/{notebook_id}/generated-notebook.ipynb"
-#         return colab_link
-
-
-# else:
-#     colab_enabled = False
-   
-#*************************************#
-
-#*************************************#
 
 
 img_dirs = pd.DataFrame()
@@ -52,11 +11,7 @@ img_dirs['dir'] = ['obama','daw_su','jackie_chan','messi']
 
 template_dirs = pd.DataFrame()
 template_dirs['dir'] = None
-# list_dir = []
-# for f in os.scandir("templates"):
-#     for img in os.scandir(f):
-#         list_dir.append(img)
-# template_dirs['dir'] = list_dir
+
 
 
 
@@ -79,25 +34,9 @@ with st.sidebar:
 
 
 
-
-
-#*****************************************#
-#loading model file and test
-
-# import urllib.request
-# import zipfile
-# from io import BytesIO
-
-#url = 'https://github.com/Rajkap/Streamlit_app/blob/691694146b2baf55ed03dead842aa2b2d3e90224/model_file.zip'
-#z = zipfile.ZipFile(BytesIO(urllib.request.urlopen(url).read()))
-#z.extractall()
-
-
-
-import os
 from zipfile import ZipFile
-work_dir = os.getcwd()                                                  #Saves the current working directory.
-print(work_dir)
+work_dir = os.getcwd()       #Saves the current working directory.
+# print(work_dir)
 # st.write(work_dir)
 with ZipFile(os.path.join(work_dir ,'model_file.zip'),'r') as zipobject:
   zipobject.extractall() 
@@ -113,9 +52,6 @@ model_file = tf.keras.models.load_model(model_path)
 
 template ='templates'
 real_path = os.path.join(work_dir ,template,option,img_file)
-# st.write(real_path)
-#path = input('Enter the path of your image in order to predict:')
-# img_path = 'https://github.com/Rajkap/Streamlit_app/blob/691694146b2baf55ed03dead842aa2b2d3e90224/templates/'+option+'/'+img_file
 img = tf.keras.preprocessing.image.load_img(real_path, target_size=(160,160))
 st.image(tf.keras.preprocessing.image.load_img(real_path),width=250)
 dictionary = {0:'Daw Aung San SuuKyi',1:'Jackie Chan',2:'Messi',3:'Barack Obama'}
@@ -126,5 +62,4 @@ images = np.vstack([x])
 classes = model_file.predict(x)
 y_classes=classes.argmax(axis=-1)
 label = y_classes[0]#9
-#print(label)
-st.write("Model မှခန့်မှန်း လိုက်သော အဖြေမှာ ",dictionary[label], "ဖြစ်ပါသည်။")
+st.write("Model မှခန့်မှန်း လိုက်သော ပုဂ္ဂိုလ် မှာ ",dictionary[label], "ဖြစ်ပါသည်။")
