@@ -54,7 +54,7 @@ template ='templates'
 real_path = os.path.join(work_dir ,template,option,img_file)
 img = tf.keras.preprocessing.image.load_img(real_path, target_size=(160,160))
 
-col1, col2, col3 = st.beta_columns([1,6,1])
+col1, col2, col3 = st.columns([1,6,1])
 
 with col1:
     st.write("")
