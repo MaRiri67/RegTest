@@ -30,10 +30,10 @@ with st.sidebar:
     load_img(option)
                         
     img_file = st.selectbox("Choose any one image", template_dirs['dir'])
-    st.info("Copyright@Anonymous")
-
-
-
+    st.info("Copyright@Clover")
+    
+    
+    
 from zipfile import ZipFile
 work_dir = os.getcwd()       #Saves the current working directory.
 # print(work_dir)
@@ -53,7 +53,19 @@ model_file = tf.keras.models.load_model(model_path)
 template ='templates'
 real_path = os.path.join(work_dir ,template,option,img_file)
 img = tf.keras.preprocessing.image.load_img(real_path, target_size=(160,160))
+
+col1, col2, col3 = st.beta_columns([1,6,1])
+
+with col1:
+st.write("")
+
+with col2:
 st.image(tf.keras.preprocessing.image.load_img(real_path),width=250)
+
+with col3:
+st.write("")
+
+# st.image(tf.keras.preprocessing.image.load_img(real_path),width=250)
 dictionary = {0:'Daw Aung San SuuKyi',1:'Jackie Chan',2:'Messi',3:'Barack Obama'}
 x = tf.keras.preprocessing.image.img_to_array(img)
 x = np.expand_dims(x,axis=0)
@@ -63,3 +75,6 @@ classes = model_file.predict(x)
 y_classes=classes.argmax(axis=-1)
 label = y_classes[0]#9
 st.write("Model မှခန့်မှန်း လိုက်သော ပုဂ္ဂိုလ် မှာ ",dictionary[label], "ဖြစ်ပါသည်။")
+
+
+
