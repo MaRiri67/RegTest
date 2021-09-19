@@ -30,6 +30,14 @@ with st.sidebar:
     load_img(option)
                         
     img_file = st.selectbox("Choose any one image", template_dirs['dir'])
+    st.sidebar.title("Note")
+    st.sidebar.write(
+        """Playing with the options in Selectbox, you _will_ find **images** of Four Famous-Person exist in this
+        model.The second Selectbox includes twenty test images of those people. You can test each person's images by choosing the avaliable options
+        in those two selectboxes. After that, the Model predicted answer will apper. Keep in mind that this model's prediction Accuracy is 91.25% which isn't not bad.
+        
+        """
+    )
     st.info("Copyright@Clover")
     
     
@@ -54,7 +62,7 @@ template ='templates'
 real_path = os.path.join(work_dir ,template,option,img_file)
 img = tf.keras.preprocessing.image.load_img(real_path, target_size=(160,160))
 
-col1, col2, col3 = st.columns([1,6,1])
+col1, col2, col3 = st.columns([1,3,1])
 
 with col1:
     st.write("")
@@ -74,7 +82,9 @@ images = np.vstack([x])
 classes = model_file.predict(x)
 y_classes=classes.argmax(axis=-1)
 label = y_classes[0]#9
-st.write("      Model မှခန့်မှန်း လိုက်သော ပုဂ္ဂိုလ် မှာ ",dictionary[label], "ဖြစ်ပါသည်။")
+st.write("Model မှခန့်မှန်း လိုက်သော ပုဂ္ဂိုလ် မှာ ",dictionary[label], "ဖြစ်ပါသည်။")
 
-
+st.write(
+        """**This project is created as a AI-course pritical projected by team `Clover`**"""
+    )
 
