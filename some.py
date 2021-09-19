@@ -37,7 +37,7 @@ with st.sidebar:
     st.sidebar.write(
         """Playing with the options in Selectbox, you will find _images of Four Famous-Person_ exist in this
         model.The second Selectbox includes twenty test images of those people. You can test each person's images by choosing the avaliable options
-        in those two selectboxes. After that, the Model predicted answer will apper. Keep in mind that this model's prediction Accuracy is **_91.25%-** _which is not bad._
+        in those two selectboxes. After that, the Model predicted answer will apper. Keep in mind that this model's prediction Accuracy is **_91.25%_** _which is not bad._
         
         """
     )
