@@ -12,7 +12,7 @@ img_dirs['dir'] = ['obama','daw_su','jackie_chan','messi']
 template_dirs = pd.DataFrame()
 template_dirs['dir'] = None
 
-
+st.title('Face Recognition Application')
 
 
 with st.sidebar:
