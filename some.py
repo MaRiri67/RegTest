@@ -13,8 +13,8 @@ template_dirs = pd.DataFrame()
 template_dirs['dir'] = None
 
 st.title('Face Recognition Application')
-"""As entitled, we developed a facial recognition software by Machine Model(CNN) which was trianed by multiple images give a predicted result of 91.25% Accuracy.
-Various libraries are imported included pandas,numpy, keras,os,mobilenetvs, and etc.. and by utilizing them created a great model.
+"""As entitled, we developed a facial recognition software by Machine Model(CNN) which was trianed by multiple images gives a predicted result of 91.25% Accuracy.
+Various libraries are imported included pandas,numpy, keras,os,mobilenetv2, and etc.. and by utilizing them created such a good model.
 The whole Porject's source code can be found [here](https://github.com/Rajkap/Streamlit_app)."""
 
 
@@ -37,7 +37,7 @@ with st.sidebar:
     st.sidebar.write(
         """Playing with the options in Selectbox, you will find _images of Four Famous-Person_ exist in this
         model.The second Selectbox includes twenty test images of those people. You can test each person's images by choosing the avaliable options
-        in those two selectboxes. After that, the Model predicted answer will apper. Keep in mind that this model's prediction Accuracy is **_91.25%_** _which is not bad._
+        in those two selectboxes. After that, the Model predicted answer will apper. Keep in mind that this model's prediction accuracy is **_91.25%_** _which is not bad._
         
         """
     )
