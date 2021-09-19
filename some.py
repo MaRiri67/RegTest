@@ -80,13 +80,13 @@ with col2:
     classes = model_file.predict(x)
     y_classes=classes.argmax(axis=-1)
     label = y_classes[0]#9
-    st.write("Predicted as","**",dictionary[label],"**")
+    st.write("Predicted as","**_",dictionary[label],"_**")
 
 with col3:
     st.write("")
 
 
 st.write(
-        """This project is created as a AI-course pritical projected by team `Clover`"""
+        """_This project is created as a AI-course pritical projected by team `Clover`_"""
     )
 
