@@ -62,7 +62,7 @@ template ='templates'
 real_path = os.path.join(work_dir ,template,option,img_file)
 img = tf.keras.preprocessing.image.load_img(real_path, target_size=(160,160))
 
-col1, col2, col3 = st.columns([1,3,1])
+col1, col2, col3 = st.columns([1,1,1])
 
 with col1:
     st.write("")
@@ -70,19 +70,21 @@ with col1:
 with col2:
     st.image(tf.keras.preprocessing.image.load_img(real_path),width=250)
 
+
+# st.image(tf.keras.preprocessing.image.load_img(real_path),width=250)
+    dictionary = {0:'Daw Aung San SuuKyi',1:'Jackie Chan',2:'Messi',3:'Barack Obama'}
+    x = tf.keras.preprocessing.image.img_to_array(img)
+    x = np.expand_dims(x,axis=0)
+    x /= 255.0
+    images = np.vstack([x])
+    classes = model_file.predict(x)
+    y_classes=classes.argmax(axis=-1)
+    label = y_classes[0]#9
+    st.write("Model မှခန့်မှန်း လိုက်သော ပုဂ္ဂိုလ် မှာ ",dictionary[label], "ဖြစ်ပါသည်။")
+
 with col3:
     st.write("")
 
-# st.image(tf.keras.preprocessing.image.load_img(real_path),width=250)
-dictionary = {0:'Daw Aung San SuuKyi',1:'Jackie Chan',2:'Messi',3:'Barack Obama'}
-x = tf.keras.preprocessing.image.img_to_array(img)
-x = np.expand_dims(x,axis=0)
-x /= 255.0
-images = np.vstack([x])
-classes = model_file.predict(x)
-y_classes=classes.argmax(axis=-1)
-label = y_classes[0]#9
-st.write("Model မှခန့်မှန်း လိုက်သော ပုဂ္ဂိုလ် မှာ ",dictionary[label], "ဖြစ်ပါသည်။")
 
 st.write(
         """**This project is created as a AI-course pritical projected by team `Clover`**"""
