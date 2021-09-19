@@ -57,13 +57,13 @@ img = tf.keras.preprocessing.image.load_img(real_path, target_size=(160,160))
 col1, col2, col3 = st.beta_columns([1,6,1])
 
 with col1:
-st.write("")
+    st.write("")
 
 with col2:
-st.image(tf.keras.preprocessing.image.load_img(real_path),width=250)
+    st.image(tf.keras.preprocessing.image.load_img(real_path),width=250)
 
 with col3:
-st.write("")
+    st.write("")
 
 # st.image(tf.keras.preprocessing.image.load_img(real_path),width=250)
 dictionary = {0:'Daw Aung San SuuKyi',1:'Jackie Chan',2:'Messi',3:'Barack Obama'}
