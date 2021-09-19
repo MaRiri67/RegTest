@@ -13,6 +13,9 @@ template_dirs = pd.DataFrame()
 template_dirs['dir'] = None
 
 st.title('Face Recognition Application')
+"""As entitled, we developed a facial recognition software by Machine Model(CNN) which was trianed by multiple images give a predicted result of 91.25% Accuracy.
+Various libraries are imported included pandas,numpy, keras,os,mobilenetvs, and etc.. and by utilizing them created a great model.
+The whole Porject's source code can be found [here](https://github.com/Rajkap/Streamlit_app)
 
 
 with st.sidebar:
