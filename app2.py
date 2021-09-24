@@ -5,11 +5,11 @@ import matplotlib.pyplot as plt
 import tensorflow as tf
 import os
 
-image_library = {'Obama':'obama','Daw Su':'daw_su','Jackie':'jackie_chan','Messi':'messi'}
+
 
 img_dirs = pd.DataFrame()
-#img_dirs['dir'] = ['obama','daw_su','jackie_chan','messi']
-img_dirs['dir'] =  list(image_library.values())
+img_dirs['dir'] = ['obama','daw_su','jackie_chan','messi']
+
 
 template_dirs = pd.DataFrame()
 template_dirs['dir'] = None
@@ -40,7 +40,6 @@ with st.sidebar:
     col1,col2,col3 = st.sidebar.columns([1,1,1])
     with col1:
         st.write('')
-        st.write(option)
     with col2:
         starting = st.button('predict')
     with col3:
