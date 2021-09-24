@@ -5,10 +5,11 @@ import matplotlib.pyplot as plt
 import tensorflow as tf
 import os
 
-
+image_library = {'Obama':'obama','Daw Su':'daw_su','Jackie':'jackie_chan','Messi''messi'}
 
 img_dirs = pd.DataFrame()
-img_dirs['dir'] = ['obama','daw_su','jackie_chan','messi']
+#img_dirs['dir'] = ['obama','daw_su','jackie_chan','messi']
+img_dirs['dir'] = list(image_dictionary.values())
 
 
 template_dirs = pd.DataFrame()
