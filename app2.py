@@ -9,7 +9,7 @@ image_library = {'Obama':'obama','Daw Su':'daw_su','Jackie':'jackie_chan','Messi
 
 img_dirs = pd.DataFrame()
 #img_dirs['dir'] = ['obama','daw_su','jackie_chan','messi']
-img_dirs['dir'] = val_list = list(image_library.values())
+img_dirs['dir'] =  list(image_library.values())
 
 template_dirs = pd.DataFrame()
 template_dirs['dir'] = None
@@ -21,8 +21,13 @@ The whole Porject's source code can be found [here](https://github.com/Rajkap/St
 
 
 with st.sidebar:
+    #option = st.sidebar.selectbox(
+    #'Select One Person',img_dirs['dir'])
+
     option = st.sidebar.selectbox(
-    'Select One Person',img_dirs['dir'])
+    'Select One Person',list(image_library.keys())
+        
+    option2 = image_library[option]
     
     def load_img(name):
         for f in os.scandir("templates"):
@@ -76,7 +81,7 @@ for f in path:
 model_file = tf.keras.models.load_model(model_path)
 
 template ='templates'
-real_path = os.path.join(work_dir ,template,option,img_file)
+real_path = os.path.join(work_dir ,template,option2,img_file)
 img = tf.keras.preprocessing.image.load_img(real_path, target_size=(160,160))
 
 col1, col2, col3 = st.columns([1,2,1])
