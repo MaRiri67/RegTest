@@ -24,6 +24,8 @@ with st.sidebar:
     option = st.sidebar.selectbox(
     'Select One Person',img_dirs['dir'])
     
+    new = st.sidebar.selectbox('new test', image_library.keys())
+    
     def load_img(name):
         for f in os.scandir("templates"):
             if (f.is_dir() and f.name == name):
