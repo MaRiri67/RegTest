@@ -42,6 +42,7 @@ with st.sidebar:
     col1,col2,col3 = st.sidebar.columns([1,1,1])
     with col1:
         st.write('')
+        st.write(option)
     with col2:
         starting = st.button('predict')
     with col3:
