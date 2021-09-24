@@ -24,7 +24,9 @@ The whole Porject's source code can be found [here](https://github.com/Rajkap/St
 with st.sidebar:
     option = st.sidebar.selectbox(
     'Select One Person',img_dirs['dir'])
-
+    
+    new = st.sidebar.selectbox('Select',
+    list(image_library.values()))
     
     def load_img(name):
         for f in os.scandir("templates"):
