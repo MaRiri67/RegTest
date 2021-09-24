@@ -9,7 +9,7 @@ image_library = {'Obama':'obama','Daw Su':'daw_su','Jackie':'jackie_chan','Messi
 
 img_dirs = pd.DataFrame()
 #img_dirs['dir'] = ['obama','daw_su','jackie_chan','messi']
-img_dirs['dir'] = list(image_dictionary.values())
+img_dirs['dir'] = list(image_library.values())
 
 
 template_dirs = pd.DataFrame()
