@@ -92,6 +92,6 @@ st.write("")
 st.write("")
 st.write("")
 st.write(
-        """_This project is created as a AI-course pritical project by team `Clover`_."""
+        """_This project is developed as a AI-course Machine Learning project by team `Clover`_."""
     )
 
