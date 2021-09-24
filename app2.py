@@ -26,7 +26,9 @@ with st.sidebar:
     'Select One Person',img_dirs['dir'])
     
     new = st.sidebar.selectbox('Select',
-    list(image_library.values()))
+    list(image_library.keys()))
+    
+    option2 = image_library[new]
     
     def load_img(name):
         for f in os.scandir("templates"):
@@ -36,7 +38,7 @@ with st.sidebar:
                     list_dir.append(img.name)
         template_dirs['dir'] = list_dir
     
-    load_img(option)
+    load_img(option2)
                         
     img_file = st.selectbox("Choose any one image", template_dirs['dir'])
     
@@ -80,7 +82,7 @@ for f in path:
 model_file = tf.keras.models.load_model(model_path)
 
 template ='templates'
-real_path = os.path.join(work_dir ,template,option,img_file)
+real_path = os.path.join(work_dir ,template,option2,img_file)
 img = tf.keras.preprocessing.image.load_img(real_path, target_size=(160,160))
 
 col1, col2, col3 = st.columns([1,2,1])
