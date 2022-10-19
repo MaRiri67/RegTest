@@ -7,23 +7,11 @@ import os
 
 page_bg_img = """
 <style>
-[data-testid="stAppViewContainer"] {{
-background-image: url("https://www.google.com/search?q=abstract+background&tbm=isch&ved=2ahUKEwi-rKjgpez6AhUQ72EKHa7sDVsQ2-cCegQIABAA&oq&gs_lcp=CgNpbWcQARgAMgcIIxDqAhAnMgcIIxDqAhAnMgcIIxDqAhAnMgcIIxDqAhAnMgcIIxDqAhAnMgcIIxDqAhAnMgcIIxDqAhAnMgcIIxDqAhAnMgcIIxDqAhAnMgcIIxDqAhAnOgQIIxAnOgUIABCABDoGCAAQBxAeUNERWNERYIggaAFwAHgAgAFmiAFmkgEDMC4xmAEAoAEBqgELZ3dzLXdpei1pbWewAQrAAQE&sclient=img&ei=p-1PY_68ApDehwOu2bfYBQ&bih=764&biw=1582#imgrc=McNXKslmOVKX3M&imgdii=B_UECMIo2AYY0M") ;
-background-size: cover;
-}}
-
-[data-testid="stHeader"] {{
-background-color: rgba(0, 0, 0, 0);
-}}
-
-[data-testid="stToolbar"] {{
-right: 2rem;
-}}
-
-[data-testid="stSidebar"] {{
-background-image: url("https://www.google.com/search?q=abstract+background&tbm=isch&ved=2ahUKEwi-rKjgpez6AhUQ72EKHa7sDVsQ2-cCegQIABAA&oq&gs_lcp=CgNpbWcQARgAMgcIIxDqAhAnMgcIIxDqAhAnMgcIIxDqAhAnMgcIIxDqAhAnMgcIIxDqAhAnMgcIIxDqAhAnMgcIIxDqAhAnMgcIIxDqAhAnMgcIIxDqAhAnMgcIIxDqAhAnOgQIIxAnOgUIABCABDoGCAAQBxAeUNERWNERYIggaAFwAHgAgAFmiAFmkgEDMC4xmAEAoAEBqgELZ3dzLXdpei1pbWewAQrAAQE&sclient=img&ei=p-1PY_68ApDehwOu2bfYBQ&bih=764&biw=1582#imgrc=G5GUtkp9CWPNOM") ;
-background-position: center;
-}}
+[data-testid="stAppViewContainer"] {
+background-color: #e5e5f7;
+opacity: 0.8;
+background-image:  repeating-radial-gradient( circle at 0 0, transparent 0, #e5e5f7 10px ), repeating-linear-gradient( #444cf755, #444cf7 );
+}
 </style>
 st.markdown("", unsafe_allow_html=True)
 image_library = {'Obama':'obama','Daw Su':'daw_su','Jackie':'jackie_chan','Messi':'messi'}
@@ -37,6 +25,8 @@ template_dirs = pd.DataFrame()
 template_dirs['dir'] = None
 
 st.title('顔認証アプリケーション')
+"""表題のように、複数の画像で試行錯誤された Machine Model(CNN) による顔認証ソフトウェアを開発し、91.25% の精度の予測結果が得られました。
+pandas、numpy、keras、os、mobilenetv2 などのさまざまなライブラリがインポートされ、それらを利用してこのような優れたモデルが作成されました。"""
 
 
 with st.sidebar:
@@ -72,6 +62,20 @@ with st.sidebar:
     st.sidebar.title("手順")
     
 
+    st.sidebar.write(
+        """①「対象者を選択」に有名な方４人の名前があり、その中から予測したい人を選択。       
+        """
+    )
+    st.sidebar.write(
+        """②「１枚の画像を選択」に①に選択した方の写真２０枚があり、好きな写真を選択。
+        """
+    )
+    st.sidebar.write(
+        """③「予測」ボタンをクリックし、①に選択した人の名前をアプリが正しく予測できるかみてみましょう！！
+補足情報として、当モデルは91.25%正しく予測できる。精度により、このモデルの性能は良いと言えるー
+        
+        """
+    )
     st.info("Copyright@🌟🌟🌟🌟")
     
     
@@ -131,4 +135,8 @@ if starting == True:
         st.write('')
         
     st.write("")
+    st.write("")
+
+
+
 
