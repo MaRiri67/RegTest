@@ -37,8 +37,6 @@ template_dirs = pd.DataFrame()
 template_dirs['dir'] = None
 
 st.title('顔認証アプリケーション')
-"""表題のように、複数の画像で試行錯誤された Machine Model(CNN) による顔認証ソフトウェアを開発し、91.25% の精度の予測結果が得られました。
-pandas、numpy、keras、os、mobilenetv2 などのさまざまなライブラリがインポートされ、それらを利用してこのような優れたモデルが作成されました。"""
 
 
 with st.sidebar:
