@@ -5,6 +5,27 @@ import matplotlib.pyplot as plt
 import tensorflow as tf
 import os
 
+page_bg_img = """
+<style>
+[data-testid="stAppViewContainer"] {{
+background-image: url("https://www.google.com/search?q=abstract+background&tbm=isch&ved=2ahUKEwi-rKjgpez6AhUQ72EKHa7sDVsQ2-cCegQIABAA&oq&gs_lcp=CgNpbWcQARgAMgcIIxDqAhAnMgcIIxDqAhAnMgcIIxDqAhAnMgcIIxDqAhAnMgcIIxDqAhAnMgcIIxDqAhAnMgcIIxDqAhAnMgcIIxDqAhAnMgcIIxDqAhAnMgcIIxDqAhAnOgQIIxAnOgUIABCABDoGCAAQBxAeUNERWNERYIggaAFwAHgAgAFmiAFmkgEDMC4xmAEAoAEBqgELZ3dzLXdpei1pbWewAQrAAQE&sclient=img&ei=p-1PY_68ApDehwOu2bfYBQ&bih=764&biw=1582#imgrc=McNXKslmOVKX3M&imgdii=B_UECMIo2AYY0M") ;
+background-size: cover;
+}}
+
+[data-testid="stHeader"] {{
+background-color: rgba(0, 0, 0, 0);
+}}
+
+[data-testid="stToolbar"] {{
+right: 2rem;
+}}
+
+[data-testid="stSidebar"] {{
+background-image: url("https://www.google.com/search?q=abstract+background&tbm=isch&ved=2ahUKEwi-rKjgpez6AhUQ72EKHa7sDVsQ2-cCegQIABAA&oq&gs_lcp=CgNpbWcQARgAMgcIIxDqAhAnMgcIIxDqAhAnMgcIIxDqAhAnMgcIIxDqAhAnMgcIIxDqAhAnMgcIIxDqAhAnMgcIIxDqAhAnMgcIIxDqAhAnMgcIIxDqAhAnMgcIIxDqAhAnOgQIIxAnOgUIABCABDoGCAAQBxAeUNERWNERYIggaAFwAHgAgAFmiAFmkgEDMC4xmAEAoAEBqgELZ3dzLXdpei1pbWewAQrAAQE&sclient=img&ei=p-1PY_68ApDehwOu2bfYBQ&bih=764&biw=1582#imgrc=G5GUtkp9CWPNOM") ;
+background-position: center;
+}}
+</style>
+st.markdown("", unsafe_allow_html=True)
 image_library = {'Obama':'obama','Daw Su':'daw_su','Jackie':'jackie_chan','Messi':'messi'}
 
 img_dirs = pd.DataFrame()
@@ -63,7 +84,7 @@ with st.sidebar:
     )
     st.sidebar.write(
         """③「予測」ボタンをクリックし、①に選択した人の名前をアプリが正しく予測できるかみてみましょう！！
-補足情報として、当モデルは91.25%正しく予測できる。精度により、このモデルの性能は良いと言えるー
+補足情報として、当モデルは91.25%正しく予測できる。精度率により、性能は良いと言えるー
         
         """
     )
