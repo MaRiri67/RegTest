@@ -15,17 +15,16 @@ img_dirs['dir'] = list(image_library.values())
 template_dirs = pd.DataFrame()
 template_dirs['dir'] = None
 
-st.title('Face Recognition Application')
-"""As entitled, we developed a facial recognition software by Machine Model(CNN) which was trianed by multiple images gives a predicted result of 91.25% Accuracy.
-Various libraries are imported included pandas,numpy, keras,os,mobilenetv2, and etc.. and by utilizing them created such a good model.
-The whole Porject's source code can be found [here](https://github.com/Rajkap/Streamlit_app)."""
+st.title('顔認証アプリケーション')
+"""表題のように複数の画像で試行錯誤された Machine Model(CNN) による顔認証ソフトウェアを開発し、91.25% の精度の予測結果が得られました。
+pandas、numpy、keras、os、mobilenetv2 などのさまざまなライブラリがインポートされ、それらを利用してこのような優れたモデルが作成されました。"""
 
 
 with st.sidebar:
     #option = st.sidebar.selectbox(
     #'Select One Person',img_dirs['dir'])
     
-    new = st.sidebar.selectbox('Select One Person',
+    new = st.sidebar.selectbox('対象者を選択',
     list(image_library.keys()))
     
     option = image_library[new]
@@ -40,28 +39,35 @@ with st.sidebar:
     
     load_img(option)
                         
-    img_file = st.selectbox("Choose any one image", template_dirs['dir'])
+    img_file = st.selectbox("１枚の画像を選択", template_dirs['dir'])
     
     col1,col2,col3 = st.sidebar.columns([1,1,1])
     with col1:
         st.write('')
     with col2:
-        starting = st.button('predict')
+        starting = st.button('予測')
     with col3:
         st.write('')
     
     st.sidebar.write(' ')
-    st.sidebar.title("Note")
+    st.sidebar.title("手順")
     
     
     st.sidebar.write(
-        """Playing with the options in Selectbox, you will find _images of Four Famous-Person_ exist in this
-        model.The second Selectbox includes twenty test images of those people. You can test each person's images by choosing the avaliable options
-        in those two selectboxes. After that, the Model predicted answer will apper. Keep in mind that this model's prediction accuracy is **_91.25%_** _which is not bad._
+        """①「対象者を選択」に有名な方４人の名前があり、その中から予測したい人を選択。       
+        """
+    )
+    st.sidebar.write(
+        """②「１枚の画像を選択」に①に選択した方の写真２０枚があり、好きな写真を選択。
+        """
+    )
+    st.sidebar.write(
+        """③「予測」ボタンをクリックし、①に選択した人の名前をアプリが正しく予測できるかみてみましょう！！
+補足情報として、当モデルは91.25%正しく予測できる。精度により性能は良いと言えるー
         
         """
     )
-    st.info("Copyright@Clover")
+    st.info("Copyright@🌟🌟🌟🌟")
     
     
     
