@@ -121,15 +121,12 @@ if starting == True:
         st.write('')
     with col5:
         st.write('')
-        st.write("Predicted as","**_",dictionary[label],"_**")
+        st.write("予測結果⭐️⭐️","**_",dictionary[label],"_**")
     with col6:
         st.write('')
         
     st.write("")
     st.write("")
-st.write(
-            """_Enjoy Life We Only Live Once_."""
-        )
 
 
 
