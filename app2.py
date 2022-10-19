@@ -128,7 +128,7 @@ if starting == True:
     st.write("")
     st.write("")
 st.write(
-            """_This project is created as a AI-course pritical project by team `Clover`_."""
+            """_Enjoy Life We Only Live Once_."""
         )
 
 
