@@ -129,10 +129,4 @@ if starting == True:
         st.write("予測結果⭐️⭐️","**_",dictionary[label],"_**")
     with col6:
         st.write('')
-        
-    st.write("")
-    st.write("")
-
-
-
 
