@@ -15,8 +15,8 @@ img_dirs['dir'] = list(image_library.values())
 template_dirs = pd.DataFrame()
 template_dirs['dir'] = None
 
-st.title('画像から顔認証アプリケーション')
-"""表題のように、複数の画像で試行錯誤された Machine Model(CNN) による顔認識ソフトウェアを開発し、91.25% の精度の予測結果が得られました。
+st.title('画像から顔を検出する顔認証アプリケーション')
+"""表題のように、複数の画像で試行錯誤された Machine Model(CNN) による顔認証ソフトウェアを開発し、91.25% の精度の予測結果が得られました。
 pandas、numpy、keras、os、mobilenetv2 などのさまざまなライブラリがインポートされ、それらを利用してこのような優れたモデルが作成されました。"""
 
 
@@ -61,7 +61,21 @@ with st.sidebar:
         
         """
     )
-    st.info("Copyright@Clover")
+    st.sidebar.write(
+        """①「対象者を選択」に有名な方４人の名前があり、その中から予測したい人を選択。       
+        """
+    )
+    st.sidebar.write(
+        """②「１枚の画像を選択」に①に選択した方の写真２０枚があり、好きな写真を選択。
+        """
+    )
+    st.sidebar.write(
+        """③「予測」ボタンをクリックし、モデルが①に選択した人の名前を正しく予測できるかみてみましょう！！
+補足情報として、当モデルは91.25%正しく予測できる。精度により、このモデルの性能は良いと言える⭐️🌟
+        
+        """
+    )
+    st.info("Copyright@🌟🌟")
     
     
     
